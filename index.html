@@ -1,0 +1,553 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Pieczywo rzemieślnicze Ruda Śląska | Chlebak Pieczywo Rzemieślnicze, Ruda Południowa</title>
+<meta name="description" content="Chlebak Pieczywo Rzemieślnicze w Rudzie Śląskiej (Ruda Południowa, ul. Astrów 12). Chleb Viking, Dobrodziej, bułka morska, mini pizza i kołoczki. Ocena 5,0 w Google. Otwarte pn–pt 13:00–19:00.">
+<meta property="og:title" content="Chlebak Pieczywo Rzemieślnicze, Ruda Śląska">
+<meta property="og:description" content="Piekarnia rzemieślnicza w Rudzie Południowej. Ocena 5,0 w Google. Astrów 12, Ruda Śląska.">
+<meta property="og:type" content="website">
+<meta property="og:locale" content="pl_PL">
+<meta name="theme-color" content="#2B4A35">
+<link rel="preload" href="fonts/poppins-regular.woff" as="font" type="font/woff" crossorigin>
+<link rel="preload" href="fonts/poppins-bold.woff" as="font" type="font/woff" crossorigin>
+<script src="https://cdn.tailwindcss.com/3.4.17"></script>
+<script>
+tailwind.config = { theme: { extend: {
+  fontFamily: { sans: ['Poppins', 'system-ui', 'sans-serif'] },
+  colors: { rye: '#2B4A35', crust: '#C8872A', ink: '#2B2318', flour: '#EDE3CE', paper: '#F6EEDC', wheat: '#E2D3B0' }
+}}}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Bakery",
+  "name": "Chlebak Pieczywo Rzemieślnicze",
+  "description": "Piekarnia rzemieślnicza w Rudzie Śląskiej, dzielnica Ruda Południowa. Chleb, bułki, mini pizza i wypieki cukiernicze.",
+  "hasMap": "https://www.google.com/maps/dir/?api=1&destination=50.3003298,18.8521927",
+  "priceRange": "1-20 PLN",
+  "address": { "@type": "PostalAddress", "streetAddress": "Astrów 12", "addressLocality": "Ruda Śląska", "addressRegion": "śląskie", "postalCode": "41-700", "addressCountry": "PL" },
+  "geo": { "@type": "GeoCoordinates", "latitude": 50.3003298, "longitude": 18.8521927 },
+  "areaServed": ["Ruda Śląska", "Ruda Południowa"],
+  "openingHoursSpecification": [{ "@type": "OpeningHoursSpecification", "dayOfWeek": ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday"], "opens": "13:00", "closes": "19:00" }],
+  "sameAs": ["https://www.facebook.com/p/Pieczywo-Rzemie%C5%9Blnicze-Chlebak-61583483257314/"]
+}
+</script>
+<noscript><style>.rv{opacity:1!important;transform:none!important}</style></noscript>
+<style>
+  @font-face { font-family: 'Poppins'; font-weight: 400; font-style: normal; font-display: swap; src: url('fonts/poppins-regular.woff') format('woff'); }
+  @font-face { font-family: 'Poppins'; font-weight: 500; font-style: normal; font-display: swap; src: url('fonts/poppins-medium.woff') format('woff'); }
+  @font-face { font-family: 'Poppins'; font-weight: 600 800; font-style: normal; font-display: swap; src: url('fonts/poppins-bold.woff') format('woff'); }
+  html { scroll-behavior: smooth; scroll-padding-top: 5rem; }
+  body { padding-bottom: 4.5rem; }
+  @media (min-width: 768px) { body { padding-bottom: 0; } }
+  :focus-visible { outline: 3px solid #C8872A; outline-offset: 2px; }
+  .grain { background-image: radial-gradient(rgba(43,74,53,.08) 1px, transparent 1px); background-size: 14px 14px; }
+
+  /* wejście hero */
+  .line { display: block; overflow: hidden; }
+  .line > span { display: block; transform: translateY(110%); animation: up .9s cubic-bezier(.2,.8,.2,1) forwards; animation-delay: var(--d, 0s); }
+  @keyframes up { to { transform: none; } }
+  .fade { opacity: 0; animation: fadein .9s ease forwards; animation-delay: var(--d, 0s); }
+  @keyframes fadein { to { opacity: 1; } }
+  .arch { clip-path: inset(100% 0 0 0 round 999px 999px 24px 24px); animation: reveal 1.3s cubic-bezier(.2,.8,.2,1) .3s forwards; }
+  @keyframes reveal { to { clip-path: inset(0 0 0 0 round 999px 999px 24px 24px); } }
+  .float { animation: float 6s ease-in-out infinite; }
+  @keyframes float { 50% { transform: translateY(-10px); } }
+  .spin { animation: spin 22s linear infinite; }
+  @keyframes spin { to { transform: rotate(360deg); } }
+  .crumb { position: absolute; border-radius: 999px; background: #C8872A; opacity: .35; animation: drift var(--t, 9s) ease-in-out infinite; animation-delay: var(--d, 0s); }
+  @keyframes drift { 0%,100% { transform: translate(0,0); } 50% { transform: translate(14px,-26px); } }
+
+  /* przewijanie */
+  .rv { opacity: 0; transform: translateY(32px); transition: opacity .8s ease, transform .8s cubic-bezier(.2,.8,.2,1); transition-delay: var(--d, 0s); }
+  .rv.in { opacity: 1; transform: none; }
+  .marq { display: flex; width: max-content; animation: marq var(--md, 60s) linear infinite; }
+  .marq:hover { animation-play-state: paused; }
+  @keyframes marq { to { transform: translateX(calc(var(--mw, 50%) * -1)); } }
+  .star { display: inline-block; transform: scale(0); }
+  .in .star, .star.in { animation: pop .5s cubic-bezier(.3,1.8,.5,1) forwards; animation-delay: calc(var(--i) * .09s + .2s); }
+  @keyframes pop { to { transform: scale(1); } }
+
+  /* przyciski i karty */
+  .shine { position: relative; overflow: hidden; }
+  .shine::after { content: ""; position: absolute; top: 0; left: -75%; width: 50%; height: 100%; background: linear-gradient(100deg, transparent, rgba(255,255,255,.45), transparent); transform: skewX(-20deg); }
+  .shine:hover::after { animation: sweep .8s ease; }
+  @keyframes sweep { to { left: 130%; } }
+  .pulse { animation: pulse 2.2s ease-out infinite; }
+  @keyframes pulse { 0% { box-shadow: 0 0 0 0 rgba(200,135,42,.6); } 100% { box-shadow: 0 0 0 22px rgba(200,135,42,0); } }
+  .march { stroke-dasharray: 8 10; animation: march 1.2s linear infinite; }
+  @keyframes march { to { stroke-dashoffset: -18; } }
+  .bounce { animation: bounce 1.6s ease-in-out infinite; transform-origin: bottom; }
+  @keyframes bounce { 50% { transform: translateY(-9px); } }
+  .tile img { transition: transform .8s cubic-bezier(.2,.8,.2,1); }
+  .tile:hover img { transform: scale(1.08); }
+  .slideup { animation: slideup .7s cubic-bezier(.2,.8,.2,1) both; }
+  @keyframes slideup { from { opacity: 0; transform: translateY(30px); } to { opacity: 1; transform: none; } }
+  .logo-ic { transition: background .3s, transform .5s cubic-bezier(.3,1.8,.5,1); }
+  .logo:hover .logo-ic { background: #C8872A; transform: rotate(-14deg) scale(1.12); }
+  .logo:hover .logo-em { animation: wob .9s ease; }
+  @keyframes wob { 25% { transform: rotate(-20deg) scale(1.25); } 50% { transform: rotate(16deg); } 75% { transform: rotate(-8deg); } }
+  .logo-ul { display: block; height: 2px; width: 0; margin-top: 2px; background: #C8872A; transition: width .45s ease; }
+  .logo:hover .logo-ul { width: 100%; }
+  dialog::backdrop { background: rgba(30,24,15,.85); }
+
+  @media (prefers-reduced-motion: reduce) {
+    html { scroll-behavior: auto; }
+    *, *::before, *::after { animation: none !important; transition: none !important; }
+    .rv, .fade { opacity: 1; transform: none; }
+    .line > span { transform: none; }
+    .arch { clip-path: none; }
+    .star { transform: none; }
+  }
+</style>
+</head>
+<body class="font-sans text-ink bg-flour antialiased">
+
+<header class="sticky top-0 z-40 bg-flour/90 backdrop-blur border-b border-rye/10">
+  <div class="max-w-6xl mx-auto px-4 h-16 flex items-center justify-between gap-4">
+    <a href="#top" class="logo flex items-center gap-2.5 text-rye" aria-label="Chlebak Pieczywo Rzemieślnicze, strona główna">
+      <span class="logo-ic grid place-items-center w-10 h-10 shrink-0 rounded-full bg-rye text-xl" aria-hidden="true"><span class="logo-em inline-block">🍞</span></span>
+      <span class="leading-tight"><span class="block font-extrabold text-base md:text-lg">Chlebak</span><span class="block text-[11px] md:text-xs font-medium text-rye/70">Pieczywo Rzemieślnicze</span><span class="logo-ul"></span></span>
+    </a>
+    <nav class="hidden md:flex items-center gap-7 text-sm font-medium" aria-label="Menu główne">
+      <a class="hover:text-crust transition" href="#oferta">Oferta</a>
+      <a class="hover:text-crust transition" href="#galeria">Zdjęcia</a>
+      <a class="hover:text-crust transition" href="#opinie">Opinie</a>
+      <a class="hover:text-crust transition" href="#kontakt">Dojazd</a>
+    </nav>
+    <div class="flex items-center gap-2">
+      <a href="https://m.me/61583483257314" target="_blank" rel="noopener" aria-label="Napisz do nas na Messengerze"
+         class="grid place-items-center w-10 h-10 rounded-full bg-paper text-rye shadow hover:bg-rye hover:text-paper hover:-translate-y-0.5 transition"><svg class="w-5 h-5 shrink-0" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 0C5.373 0 0 4.974 0 11.111c0 3.498 1.744 6.614 4.469 8.652V24l4.088-2.242c1.092.3 2.246.464 3.443.464 6.627 0 12-4.974 12-11.111C24 4.974 18.627 0 12 0zm1.191 14.963l-3.055-3.26-5.963 3.26L10.732 8l3.131 3.259L19.752 8l-6.561 6.963z"/></svg></a>
+      <a href="https://www.facebook.com/p/Pieczywo-Rzemie%C5%9Blnicze-Chlebak-61583483257314/" target="_blank" rel="noopener" aria-label="Chlebak Pieczywo Rzemieślnicze na Facebooku"
+         class="grid place-items-center w-10 h-10 rounded-full bg-paper text-rye shadow hover:bg-rye hover:text-paper hover:-translate-y-0.5 transition"><svg class="w-5 h-5 shrink-0" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"/></svg></a>
+      <a href="https://www.google.com/maps/dir/?api=1&destination=50.3003298,18.8521927" target="_blank" rel="noopener"
+         class="shine hidden sm:inline-block rounded-full bg-crust text-ink font-semibold text-sm px-5 py-2.5 shadow hover:shadow-lg hover:-translate-y-0.5 transition">Wyznacz trasę</a>
+    </div>
+  </div>
+</header>
+
+<main id="top">
+<!-- HERO -->
+<section class="grain relative overflow-hidden bg-gradient-to-b from-flour to-wheat/70">
+  <span class="crumb w-3 h-3 left-[6%] top-[18%]" style="--t:8s"></span>
+  <span class="crumb w-2 h-2 left-[44%] top-[10%]" style="--t:11s;--d:1s"></span>
+  <span class="crumb w-4 h-4 left-[52%] bottom-[14%]" style="--t:10s;--d:2s"></span>
+  <span class="crumb w-2 h-2 right-[8%] top-[22%]" style="--t:9s;--d:.5s"></span>
+  <span class="crumb w-3 h-3 left-[30%] bottom-[8%]" style="--t:12s;--d:3s"></span>
+
+  <div class="relative max-w-6xl mx-auto px-4 py-14 md:py-24 grid md:grid-cols-5 gap-12 items-center">
+    <div class="md:col-span-3">
+      <a href="#opinie" class="fade inline-flex items-center gap-2 rounded-full bg-paper shadow px-4 py-2 text-sm font-semibold hover:shadow-md transition" style="--d:.1s">
+        <span class="text-crust tracking-widest" aria-hidden="true">★★★★★</span>5,0 w Google
+      </a>
+      <h1 class="mt-6 text-4xl md:text-6xl font-extrabold leading-[1.08] text-rye">
+        <span class="line"><span style="--d:.2s">Pieczywo rzemieślnicze</span></span>
+        <span class="line"><span style="--d:.35s">w Rudzie Śląskiej,</span></span>
+        <span class="line"><span style="--d:.5s">prosto z Rudy Południowej</span></span>
+      </h1>
+      <p class="fade mt-6 text-lg text-ink/80 max-w-xl leading-relaxed" style="--d:.8s">
+        Chleb Viking, Dobrodziej, bułka morska, mini pizza i kołoczki. Wszystko świeże, w uczciwych cenach i z uśmiechem Pań za ladą. Zapraszamy od poniedziałku do piątku w godzinach 13:00 do 19:00.
+      </p>
+      <div class="fade mt-8 flex flex-wrap items-center gap-4" style="--d:1s">
+        <a href="https://www.google.com/maps/dir/?api=1&destination=50.3003298,18.8521927" target="_blank" rel="noopener"
+           class="shine pulse rounded-full bg-rye text-paper font-semibold px-8 py-4 shadow-lg hover:bg-ink hover:-translate-y-0.5 transition">Wyznacz trasę w Google Maps</a>
+        <a href="https://m.me/61583483257314" target="_blank" rel="noopener" class="inline-flex items-center gap-2 rounded-full border-2 border-rye/30 text-rye font-semibold px-7 py-3.5 hover:bg-rye hover:text-paper hover:-translate-y-0.5 transition"><svg class="w-5 h-5 shrink-0" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 0C5.373 0 0 4.974 0 11.111c0 3.498 1.744 6.614 4.469 8.652V24l4.088-2.242c1.092.3 2.246.464 3.443.464 6.627 0 12-4.974 12-11.111C24 4.974 18.627 0 12 0zm1.191 14.963l-3.055-3.26-5.963 3.26L10.732 8l3.131 3.259L19.752 8l-6.561 6.963z"/></svg>Napisz na Messengerze</a>
+        <a href="https://www.facebook.com/p/Pieczywo-Rzemie%C5%9Blnicze-Chlebak-61583483257314/" target="_blank" rel="noopener" class="inline-flex items-center gap-2 rounded-full bg-paper text-rye font-semibold px-7 py-3.5 shadow hover:shadow-lg hover:-translate-y-0.5 transition"><svg class="w-5 h-5 shrink-0" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"/></svg>Odwiedź nas na Facebooku</a>
+      </div>
+      <p id="status" class="fade mt-6 inline-flex items-center gap-2 rounded-2xl bg-paper/80 px-3 py-1.5 text-sm font-semibold" style="--d:1.2s">
+        <span id="dot" class="w-2.5 h-2.5 rounded-full bg-gray-400"></span><span id="statusText">Sprawdzam godziny…</span>
+      </p>
+    </div>
+
+    <div class="md:col-span-2 relative mx-auto w-full max-w-sm">
+      <div class="absolute -inset-3 rounded-t-[999px] rounded-b-3xl bg-rye/90 rotate-3"></div>
+      <div class="float relative">
+        <div class="arch relative aspect-[3/4] overflow-hidden bg-wheat shadow-2xl">
+          <img id="heroImg" alt="Świeże wypieki w piekarni Chlebak Pieczywo Rzemieślnicze w Rudzie Śląskiej" class="w-full h-full object-cover" referrerpolicy="no-referrer" fetchpriority="high">
+        </div>
+        <div class="fade absolute -left-6 -bottom-6 w-32 h-32 md:w-36 md:h-36" style="--d:1.4s">
+          <svg viewBox="0 0 120 120" class="spin w-full h-full absolute inset-0" aria-hidden="true">
+            <defs><path id="circ" d="M60,60 m-47,0 a47,47 0 1,1 94,0 a47,47 0 1,1 -94,0"/></defs>
+            <circle cx="60" cy="60" r="58" fill="#C8872A"/>
+            <text font-size="10.5" font-weight="700" fill="#2B2318" letter-spacing="1.6"><textPath href="#circ">PIECZYWO RZEMIEŚLNICZE * OCENA W GOOGLE *</textPath></text>
+          </svg>
+          <div class="absolute inset-0 grid place-items-center text-3xl font-extrabold text-ink">5,0</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- TASMA -->
+<div class="bg-rye text-paper py-4 overflow-hidden" aria-hidden="true">
+  <div id="marq" class="marq text-lg font-semibold">
+    <div class="mg flex shrink-0 items-center gap-10 pr-10"><span>Chleb Viking</span><span class="text-crust">✦</span><span>Chleb Dobrodziej</span><span class="text-crust">✦</span><span>Bułka morska</span><span class="text-crust">✦</span><span>Mini pizza</span><span class="text-crust">✦</span><span>Kołoczki</span><span class="text-crust">✦</span><span>Świeże ciasta</span><span class="text-crust">✦</span><span>Chleb Viking</span><span class="text-crust">✦</span><span>Chleb Dobrodziej</span><span class="text-crust">✦</span><span>Bułka morska</span><span class="text-crust">✦</span><span>Mini pizza</span><span class="text-crust">✦</span><span>Kołoczki</span><span class="text-crust">✦</span><span>Świeże ciasta</span><span class="text-crust">✦</span></div>
+    <div class="mg flex shrink-0 items-center gap-10 pr-10"><span>Chleb Viking</span><span class="text-crust">✦</span><span>Chleb Dobrodziej</span><span class="text-crust">✦</span><span>Bułka morska</span><span class="text-crust">✦</span><span>Mini pizza</span><span class="text-crust">✦</span><span>Kołoczki</span><span class="text-crust">✦</span><span>Świeże ciasta</span><span class="text-crust">✦</span><span>Chleb Viking</span><span class="text-crust">✦</span><span>Chleb Dobrodziej</span><span class="text-crust">✦</span><span>Bułka morska</span><span class="text-crust">✦</span><span>Mini pizza</span><span class="text-crust">✦</span><span>Kołoczki</span><span class="text-crust">✦</span><span>Świeże ciasta</span><span class="text-crust">✦</span></div>
+  </div>
+</div>
+
+<!-- ATUTY -->
+<section class="max-w-6xl mx-auto px-4 py-16 md:py-20">
+  <h2 class="rv text-3xl md:text-4xl font-bold text-rye max-w-2xl">Dlaczego mieszkańcy Rudy Śląskiej wracają do piekarni Chlebak Pieczywo Rzemieślnicze</h2>
+  <div class="mt-10 grid sm:grid-cols-2 lg:grid-cols-4 gap-5">
+    <article class="rv rounded-2xl bg-paper p-6 shadow-md hover:shadow-xl hover:-translate-y-1 transition" style="--d:.05s">
+      <p class="text-5xl font-extrabold text-rye"><span data-count="5" data-dec="1">5,0</span></p>
+      <p class="mt-1 text-crust text-lg" aria-hidden="true">★★★★★</p>
+      <h3 class="mt-2 font-semibold text-lg">Najwyższa ocena w Google</h3>
+      <p class="mt-1 text-sm text-ink/70">Klienci chwalą nas w opiniach w Google, a w wielu z nich pada słowo „polecam”.</p>
+    </article>
+    <article class="rv rounded-2xl bg-paper p-6 shadow-md hover:shadow-xl hover:-translate-y-1 transition" style="--d:.15s">
+      <div class="text-4xl" aria-hidden="true">🌾</div>
+      <h3 class="mt-3 font-semibold text-lg">Świeże i rzemieślnicze</h3>
+      <p class="mt-1 text-sm text-ink/70">Pieczywo wypiekane z dbałością o smak. Klienci piszą, że wszystko jest świeże i pyszne.</p>
+    </article>
+    <article class="rv rounded-2xl bg-paper p-6 shadow-md hover:shadow-xl hover:-translate-y-1 transition" style="--d:.25s">
+      <div class="text-4xl" aria-hidden="true">💰</div>
+      <h3 class="mt-3 font-semibold text-lg">Przystępne ceny</h3>
+      <p class="mt-1 text-sm text-ink/70">Zakupy zwykle mieszczą się w kilkunastu złotych. Klienci chwalą ceny niższe niż w sieciówkach.</p>
+    </article>
+    <article class="rv rounded-2xl bg-paper p-6 shadow-md hover:shadow-xl hover:-translate-y-1 transition" style="--d:.35s">
+      <div class="text-4xl" aria-hidden="true">😊</div>
+      <h3 class="mt-3 font-semibold text-lg">Obsługa z sercem</h3>
+      <p class="mt-1 text-sm text-ink/70">Panie doradzą nawet najbardziej niezdecydowanym i przywitają z uśmiechem.</p>
+    </article>
+  </div>
+</section>
+
+<!-- OFERTA -->
+<section id="oferta" class="grain bg-wheat/60">
+  <div class="max-w-6xl mx-auto px-4 py-16 md:py-20">
+    <h2 class="rv text-3xl md:text-4xl font-bold text-rye">Chleb, bułki i wypieki w Rudzie Śląskiej</h2>
+    <p class="rv mt-3 text-ink/75 max-w-2xl" style="--d:.1s">Piekarnia i cukiernia w jednym miejscu. Oto hity, które klienci wymieniają najczęściej.</p>
+    <div class="mt-10 grid md:grid-cols-2 lg:grid-cols-4 gap-6">
+      <article class="rv group rounded-3xl bg-paper p-7 shadow-md hover:shadow-2xl hover:-translate-y-2 transition duration-300" style="--d:.05s">
+        <div class="w-14 h-14 rounded-2xl bg-wheat grid place-items-center text-3xl group-hover:bg-crust/40 group-hover:rotate-6 transition" aria-hidden="true">🍞</div>
+        <h3 class="mt-5 text-xl font-semibold">Chleby Viking i Dobrodziej</h3>
+        <p class="mt-2 text-sm text-ink/70 leading-relaxed">Ulubione bochenki stałych klientów. Chrupiąca skórka i aromatyczny miąższ.</p>
+      </article>
+      <article class="rv group rounded-3xl bg-paper p-7 shadow-md hover:shadow-2xl hover:-translate-y-2 transition duration-300" style="--d:.15s">
+        <div class="w-14 h-14 rounded-2xl bg-wheat grid place-items-center text-3xl group-hover:bg-crust/40 group-hover:rotate-6 transition" aria-hidden="true">🥖</div>
+        <h3 class="mt-5 text-xl font-semibold">Bułka morska i świeże bułki</h3>
+        <p class="mt-2 text-sm text-ink/70 leading-relaxed">Bułka morska to według klientów prawdziwy hit. Idealna na śniadanie i na wynos.</p>
+      </article>
+      <article class="rv group rounded-3xl bg-paper p-7 shadow-md hover:shadow-2xl hover:-translate-y-2 transition duration-300" style="--d:.25s">
+        <div class="w-14 h-14 rounded-2xl bg-wheat grid place-items-center text-3xl group-hover:bg-crust/40 group-hover:rotate-6 transition" aria-hidden="true">🍕</div>
+        <h3 class="mt-5 text-xl font-semibold">Mini pizza</h3>
+        <p class="mt-2 text-sm text-ink/70 leading-relaxed">Smaczna przekąska na szybki lunch, którą docenia cała rodzina.</p>
+      </article>
+      <article class="rv group rounded-3xl bg-paper p-7 shadow-md hover:shadow-2xl hover:-translate-y-2 transition duration-300" style="--d:.35s">
+        <div class="w-14 h-14 rounded-2xl bg-wheat grid place-items-center text-3xl group-hover:bg-crust/40 group-hover:rotate-6 transition" aria-hidden="true">🥐</div>
+        <h3 class="mt-5 text-xl font-semibold">Kołoczki i ciasta</h3>
+        <p class="mt-2 text-sm text-ink/70 leading-relaxed">Śląskie kołoczki i smaczne ciasta do kawy, w cenach niższych niż w sieciówkach.</p>
+      </article>
+    </div>
+  </div>
+</section>
+
+<!-- GALERIA -->
+<section id="galeria" class="max-w-6xl mx-auto px-4 py-16 md:py-20">
+  <h2 class="rv text-3xl md:text-4xl font-bold text-rye">Zajrzyj do piekarni Chlebak Pieczywo Rzemieślnicze</h2>
+  <p class="rv mt-3 text-ink/75 max-w-2xl" style="--d:.1s">Zdjęcia z naszej piekarni w Rudzie Południowej. Kliknij, aby powiększyć.</p>
+  <div id="gallery" class="mt-10 columns-2 md:columns-3 lg:columns-4 gap-4"></div>
+</section>
+
+<!-- OPINIE -->
+<section id="opinie" class="bg-wheat/60 grain">
+  <div class="max-w-6xl mx-auto px-4 py-16 md:py-20">
+    <h2 class="rv text-3xl md:text-4xl font-bold text-rye">Opinie klientów piekarni Chlebak Pieczywo Rzemieślnicze</h2>
+    <div class="rv mt-8 flex flex-wrap items-center gap-6" style="--d:.1s">
+      <p class="text-6xl font-extrabold text-rye leading-none">5,0</p>
+      <div>
+        <p class="text-2xl text-crust tracking-widest" aria-label="5 na 5 gwiazdek"><span class="star in" style="--i:0">★</span><span class="star in" style="--i:1">★</span><span class="star in" style="--i:2">★</span><span class="star in" style="--i:3">★</span><span class="star in" style="--i:4">★</span></p>
+        <p class="text-sm text-ink/70">na podstawie opinii klientów w Google</p>
+      </div>
+      <a href="https://www.google.com/maps/place/Chlebak+Pieczywo+Rzemie%C5%9Blnicze/@50.3002905,18.852192,46m/data=!3m1!1e3!4m8!3m7!1s0x471133001de1febb:0xca62696bd6ce60ac!8m2!3d50.3003298!4d18.8521927!9m1!1b1!16s%2Fg%2F11yr84zhx9" target="_blank" rel="noopener"
+         class="shine ml-auto rounded-full bg-rye text-paper font-semibold px-6 py-3 hover:bg-ink hover:-translate-y-0.5 transition shadow">Wszystkie opinie w Google</a>
+    </div>
+
+    <div class="mt-10 grid md:grid-cols-2 gap-6">
+      <article class="rv rounded-3xl bg-paper p-7 shadow-md hover:shadow-xl hover:-translate-y-1 transition">
+        <header class="flex items-center gap-3">
+          <span class="w-12 h-12 rounded-full bg-rye text-paper grid place-items-center font-bold" aria-hidden="true">B</span>
+          <div><h3 class="font-semibold">Beata Wiktorowska-Zientek</h3><p class="text-xs text-ink/60">Opinia z Google</p></div>
+        </header>
+        <p class="mt-3 text-crust text-lg" aria-label="5 gwiazdek"><span class="star" style="--i:0">★</span><span class="star" style="--i:1">★</span><span class="star" style="--i:2">★</span><span class="star" style="--i:3">★</span><span class="star" style="--i:4">★</span></p>
+        <p class="mt-2 text-sm leading-relaxed text-ink/85">Dla tej piekarnii powinno być więcej gwiazdek! Oryginalne wypieki, różnorodnie, aby każdy znalazł coś dla siebie. Świeżo, pysznie i w przystępnych cenach. Miejsce wypełnione cudownym aromatem i przemiłą atmosferą, którą tworzą Panie witające z uśmiechem. Polecam.</p>
+        <p class="mt-4 flex flex-wrap gap-2 text-xs font-medium"><span class="rounded-full bg-wheat px-3 py-1">Jedzenie: 5</span><span class="rounded-full bg-wheat px-3 py-1">Obsługa: 5</span><span class="rounded-full bg-wheat px-3 py-1">Klimat: 5</span></p>
+      </article>
+      <article class="rv rounded-3xl bg-paper p-7 shadow-md hover:shadow-xl hover:-translate-y-1 transition" style="--d:.1s">
+        <header class="flex items-center gap-3">
+          <span class="w-12 h-12 rounded-full bg-crust text-ink grid place-items-center font-bold" aria-hidden="true">K</span>
+          <div><h3 class="font-semibold">Kinga Roter</h3><p class="text-xs text-ink/60">Opinia z Google</p></div>
+        </header>
+        <p class="mt-3 text-crust text-lg" aria-label="5 gwiazdek"><span class="star" style="--i:0">★</span><span class="star" style="--i:1">★</span><span class="star" style="--i:2">★</span><span class="star" style="--i:3">★</span><span class="star" style="--i:4">★</span></p>
+        <p class="mt-2 text-sm leading-relaxed text-ink/85">Wspaniałe miejsce, bardzo miła obsługa, która z chęcią doradzi nawet najbardziej niezdecydowanym, a bułka morska to prawdziwy sztos. Gorąco polecam.</p>
+        <p class="mt-4 flex flex-wrap gap-2 text-xs font-medium"><span class="rounded-full bg-wheat px-3 py-1">Na wynos</span><span class="rounded-full bg-wheat px-3 py-1">1–20 zł na osobę</span><span class="rounded-full bg-wheat px-3 py-1">Jedzenie: 5</span><span class="rounded-full bg-wheat px-3 py-1">Obsługa: 5</span><span class="rounded-full bg-wheat px-3 py-1">Klimat: 5</span></p>
+      </article>
+      <article class="rv rounded-3xl bg-paper p-7 shadow-md hover:shadow-xl hover:-translate-y-1 transition">
+        <header class="flex items-center gap-3">
+          <span class="w-12 h-12 rounded-full bg-ink text-paper grid place-items-center font-bold" aria-hidden="true">M</span>
+          <div><h3 class="font-semibold">Mariola Olszewska</h3><p class="text-xs text-ink/60">Opinia z Google</p></div>
+        </header>
+        <p class="mt-3 text-crust text-lg" aria-label="5 gwiazdek"><span class="star" style="--i:0">★</span><span class="star" style="--i:1">★</span><span class="star" style="--i:2">★</span><span class="star" style="--i:3">★</span><span class="star" style="--i:4">★</span></p>
+        <p class="mt-2 text-sm leading-relaxed text-ink/85">Bardzo polecam. Chleb pyszny, każdy, ale nam najbardziej smakuje Viking i Dobrodziej. Zresztą wszystko pyszne, świeże, a szczególnie mini pizza i kołoczki. Do tego obsługa rewelacyjna, aż miło się robi zakupy.</p>
+        <p class="mt-4 flex flex-wrap gap-2 text-xs font-medium"><span class="rounded-full bg-wheat px-3 py-1">1–20 zł na osobę</span><span class="rounded-full bg-wheat px-3 py-1">Jedzenie: 5</span><span class="rounded-full bg-wheat px-3 py-1">Obsługa: 5</span><span class="rounded-full bg-wheat px-3 py-1">Klimat: 5</span></p>
+      </article>
+      <article class="rv rounded-3xl bg-paper p-7 shadow-md hover:shadow-xl hover:-translate-y-1 transition" style="--d:.1s">
+        <header class="flex items-center gap-3">
+          <span class="w-12 h-12 rounded-full bg-rye/80 text-paper grid place-items-center font-bold" aria-hidden="true">R</span>
+          <div><h3 class="font-semibold">Robert Juszczyk</h3><p class="text-xs text-ink/60">Opinia z Google</p></div>
+        </header>
+        <p class="mt-3 text-crust text-lg" aria-label="5 gwiazdek"><span class="star" style="--i:0">★</span><span class="star" style="--i:1">★</span><span class="star" style="--i:2">★</span><span class="star" style="--i:3">★</span><span class="star" style="--i:4">★</span></p>
+        <p class="mt-2 text-sm leading-relaxed text-ink/85">Piekarnia rewelacyjna, pieczywo najwyższej jakości, ciasta bardzo smaczne i taniej niż w sieciówkach. Pani Karolina, właścicielka, bardzo miła, zawsze podchodzi do klienta z sercem. Polecam.</p>
+        <p class="mt-4 flex flex-wrap gap-2 text-xs font-medium"><span class="rounded-full bg-wheat px-3 py-1">Jedzenie: 5</span><span class="rounded-full bg-wheat px-3 py-1">Obsługa: 5</span><span class="rounded-full bg-wheat px-3 py-1">Klimat: 5</span></p>
+      </article>
+    </div>
+  </div>
+</section>
+
+<!-- DOJAZD -->
+<section id="kontakt" class="bg-rye text-paper">
+  <div class="max-w-6xl mx-auto px-4 py-16 md:py-20 grid lg:grid-cols-2 gap-10 items-stretch">
+    <div>
+      <h2 class="rv text-3xl md:text-4xl font-bold">Odwiedź piekarnię w Rudzie Południowej</h2>
+      <address class="rv not-italic mt-6 text-paper/85 leading-relaxed" style="--d:.1s">
+        Chlebak Pieczywo Rzemieślnicze<br>Astrów 12, 41-700 Ruda Śląska
+      </address>
+      <dl class="rv mt-4 max-w-sm divide-y divide-paper/15 text-sm" style="--d:.15s">
+        <div class="flex justify-between py-2"><dt>Poniedziałek do piątku</dt><dd class="font-semibold">13:00 do 19:00</dd></div>
+        <div class="flex justify-between py-2"><dt>Sobota i niedziela</dt><dd class="text-paper/70">zamknięte</dd></div>
+      </dl>
+
+      <div class="rv mt-8 rounded-3xl bg-paper text-ink p-7 shadow-2xl" style="--d:.2s">
+        <svg viewBox="0 0 400 110" class="w-full h-auto" aria-hidden="true">
+          <path class="march" d="M30 85 C 110 20, 170 110, 240 60 S 330 30, 362 40" fill="none" stroke="#2B4A35" stroke-width="3" stroke-linecap="round"/>
+          <circle cx="30" cy="85" r="8" fill="#C8872A"/><circle cx="30" cy="85" r="3" fill="#F6EEDC"/>
+          <g class="bounce"><path d="M362 12 c-11 0 -19 8 -19 19 c0 14 19 30 19 30 s19 -16 19 -30 c0 -11 -8 -19 -19 -19z" fill="#2B4A35"/><circle cx="362" cy="31" r="7" fill="#F6EEDC"/></g>
+        </svg>
+        <h3 class="mt-3 text-xl font-bold text-rye">Wyznacz trasę do piekarni</h3>
+        <p class="mt-1 text-sm text-ink/70">Jedno kliknięcie otworzy Google Maps z gotową trasą z Twojej lokalizacji do Astrów 12.</p>
+        <a href="https://www.google.com/maps/dir/?api=1&destination=50.3003298,18.8521927" target="_blank" rel="noopener"
+           class="shine pulse mt-5 flex items-center justify-center gap-3 rounded-full bg-crust text-ink font-bold text-lg py-4 hover:-translate-y-0.5 hover:shadow-xl transition">
+          <svg class="w-6 h-6" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 2C8.1 2 5 5.1 5 9c0 5.3 7 13 7 13s7-7.700 7-13c0-3.900-3.100-7-7-7zm0 9.500A2.500 2.500 0 1 1 12 6.500a2.500 2.500 0 0 1 0 5z"/></svg>
+          Wyznacz trasę w Google Maps
+        </a>
+      </div>
+      <div class="rv mt-5 flex flex-wrap gap-3" style="--d:.25s">
+        <a href="https://m.me/61583483257314" target="_blank" rel="noopener" class="shine inline-flex items-center gap-2 rounded-full bg-paper text-rye font-semibold px-6 py-3 hover:-translate-y-0.5 hover:shadow-xl transition"><svg class="w-5 h-5 shrink-0" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 0C5.373 0 0 4.974 0 11.111c0 3.498 1.744 6.614 4.469 8.652V24l4.088-2.242c1.092.3 2.246.464 3.443.464 6.627 0 12-4.974 12-11.111C24 4.974 18.627 0 12 0zm1.191 14.963l-3.055-3.26-5.963 3.26L10.732 8l3.131 3.259L19.752 8l-6.561 6.963z"/></svg>Napisz na Messengerze</a>
+        <a href="https://www.facebook.com/p/Pieczywo-Rzemie%C5%9Blnicze-Chlebak-61583483257314/" target="_blank" rel="noopener" class="inline-flex items-center gap-2 rounded-full border-2 border-paper/40 text-paper font-semibold px-6 py-3 hover:bg-paper hover:text-rye hover:-translate-y-0.5 transition"><svg class="w-5 h-5 shrink-0" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"/></svg>Odwiedź nasz Facebook</a>
+      </div>
+    </div>
+
+    <div id="mapBox" class="rv relative rounded-3xl overflow-hidden shadow-2xl min-h-[380px] bg-paper/10" style="--d:.1s">
+      <div id="mapPh" class="absolute inset-0 grid place-items-center text-center p-8 bg-gradient-to-br from-wheat to-flour text-ink">
+        <div>
+          <svg class="bounce w-14 h-14 mx-auto text-rye" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 2C8.1 2 5 5.1 5 9c0 5.300 7 13 7 13s7-7.700 7-13c0-3.900-3.100-7-7-7zm0 9.500A2.500 2.500 0 1 1 12 6.500a2.500 2.500 0 0 1 0 5z"/></svg>
+          <p class="mt-4 text-xl font-bold text-rye">Astrów 12, Ruda Śląska</p>
+          <p class="mt-1 text-sm text-ink/70 max-w-xs mx-auto">Mapa Google załaduje się po kliknięciu. Wtedy Google może zapisać własne pliki cookies.</p>
+          <button id="mapBtn" type="button" class="shine mt-5 rounded-full bg-rye text-paper font-semibold px-7 py-3 hover:bg-ink hover:-translate-y-0.5 transition shadow-lg">Pokaż mapę</button>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+</main>
+
+<footer class="bg-ink text-paper/70 text-sm">
+  <div class="max-w-6xl mx-auto px-4 py-8 flex flex-col md:flex-row md:items-center justify-between gap-4">
+    <div>
+      <p>© <span id="year">2026</span> Chlebak Pieczywo Rzemieślnicze, Ruda Śląska</p>
+      <p class="mt-1">Piekarnia rzemieślnicza w Rudzie Południowej, Astrów 12</p>
+    </div>
+    <div class="flex items-center gap-4">
+      <a href="https://www.facebook.com/p/Pieczywo-Rzemie%C5%9Blnicze-Chlebak-61583483257314/" target="_blank" rel="noopener" aria-label="Chlebak Pieczywo Rzemieślnicze na Facebooku" class="hover:text-crust hover:-translate-y-0.5 transition"><svg class="w-5 h-5 shrink-0" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"/></svg></a>
+      <a href="https://m.me/61583483257314" target="_blank" rel="noopener" aria-label="Napisz do nas na Messengerze" class="hover:text-crust hover:-translate-y-0.5 transition"><svg class="w-5 h-5 shrink-0" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 0C5.373 0 0 4.974 0 11.111c0 3.498 1.744 6.614 4.469 8.652V24l4.088-2.242c1.092.3 2.246.464 3.443.464 6.627 0 12-4.974 12-11.111C24 4.974 18.627 0 12 0zm1.191 14.963l-3.055-3.26-5.963 3.26L10.732 8l3.131 3.259L19.752 8l-6.561 6.963z"/></svg></a>
+      <button type="button" class="js-policy underline decoration-crust underline-offset-4 hover:text-crust">Polityka prywatności</button>
+    </div>
+  </div>
+</footer>
+
+<div class="md:hidden fixed bottom-0 inset-x-0 z-50 bg-flour border-t border-rye/15 shadow-[0_-6px_20px_rgba(0,0,0,.15)] grid grid-cols-2 gap-2 p-2 pb-[max(0.5rem,env(safe-area-inset-bottom))]">
+  <a href="https://m.me/61583483257314" target="_blank" rel="noopener" class="inline-flex items-center justify-center gap-2 rounded-xl bg-paper text-rye border border-rye/20 font-bold py-3.5 active:scale-95 transition"><svg class="w-5 h-5 shrink-0" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 0C5.373 0 0 4.974 0 11.111c0 3.498 1.744 6.614 4.469 8.652V24l4.088-2.242c1.092.3 2.246.464 3.443.464 6.627 0 12-4.974 12-11.111C24 4.974 18.627 0 12 0zm1.191 14.963l-3.055-3.26-5.963 3.26L10.732 8l3.131 3.259L19.752 8l-6.561 6.963z"/></svg>Napisz do nas</a>
+  <a href="https://www.google.com/maps/dir/?api=1&destination=50.3003298,18.8521927" target="_blank" rel="noopener" class="rounded-xl bg-crust text-ink font-bold text-center py-3.5 active:scale-95 transition">Jak dojechać</a>
+</div>
+
+<div id="cookieBar" class="hidden slideup fixed z-[60] left-3 right-3 bottom-[calc(4.9rem+env(safe-area-inset-bottom))] md:left-auto md:right-5 md:bottom-5 md:max-w-md rounded-2xl bg-ink text-paper shadow-2xl p-4 md:p-5" role="region" aria-label="Informacja o plikach cookies">
+  <p class="text-sm leading-relaxed text-paper/90">Ta strona nie używa plików cookies analitycznych ani reklamowych. Mapa Google ładuje się dopiero po Twoim kliknięciu i wtedy Google może zapisać własne pliki cookies. Szczegóły znajdziesz w <button type="button" class="js-policy underline decoration-crust underline-offset-4 hover:text-crust">polityce prywatności</button>.</p>
+  <button id="cookieOk" type="button" class="shine mt-3 w-full rounded-full bg-crust text-ink font-bold py-2.5 hover:-translate-y-0.5 transition">Akceptuję</button>
+</div>
+
+<dialog id="policy" class="w-[min(92vw,42rem)] max-h-[88vh] overflow-y-auto rounded-3xl bg-paper text-ink p-0 shadow-2xl" aria-labelledby="policyTitle">
+  <div class="sticky top-0 flex items-center justify-between gap-4 bg-paper/95 backdrop-blur px-6 py-4 border-b border-rye/15">
+    <h2 id="policyTitle" class="text-xl font-bold text-rye">Polityka prywatności</h2>
+    <button id="policyClose" type="button" class="w-10 h-10 rounded-full bg-wheat text-ink text-xl font-bold hover:bg-crust/40 transition" aria-label="Zamknij politykę prywatności">×</button>
+  </div>
+  <div class="px-6 py-5 text-sm leading-relaxed space-y-4 overflow-y-auto">
+    <p class="text-ink/60">Obowiązuje od 20 października 2026 r.</p>
+    <section><h3 class="font-semibold text-rye">1. Administrator danych</h3>
+      <p>Administratorem danych osobowych jest Chlebak Pieczywo Rzemieślnicze, Astrów 12, 41-700 Ruda Śląska. W sprawach dotyczących danych osobowych możesz skontaktować się z nami przez wiadomość na Messengerze lub Facebooku albo osobiście w piekarni w godzinach otwarcia.</p></section>
+    <section><h3 class="font-semibold text-rye">2. Jakie dane przetwarzamy</h3>
+      <p>Strona ma charakter wizytówki. Nie zawiera formularzy ani kont użytkowników i nie zbieramy za jej pomocą Twoich danych kontaktowych. Serwer, na którym działa strona, automatycznie zapisuje dane techniczne, takie jak adres IP, rodzaj przeglądarki, system operacyjny, adres odwiedzanej podstrony i czas wizyty. Jeśli napiszesz do nas przez Messenger lub Facebooka, przetwarzamy dane, które nam przekażesz w wiadomości, oraz dane widoczne w Twoim profilu.</p></section>
+    <section><h3 class="font-semibold text-rye">3. Cele i podstawy prawne</h3>
+      <p>Dane techniczne przetwarzamy w celu zapewnienia działania i bezpieczeństwa strony na podstawie prawnie uzasadnionego interesu administratora (art. 6 ust. 1 lit. f RODO). Dane z wiadomości przetwarzamy w celu odpowiedzi na Twoje pytanie lub przyjęcia zamówienia, na podstawie art. 6 ust. 1 lit. b lub f RODO.</p></section>
+    <section><h3 class="font-semibold text-rye">4. Pliki cookies i usługi zewnętrzne</h3>
+      <p>Sama strona nie używa plików cookies analitycznych ani reklamowych. W Twojej przeglądarce zapisujemy jedynie informację o zamknięciu paska cookies. Czcionki są hostowane na naszym serwerze. Mapa Google Maps ładuje się dopiero po kliknięciu przycisku „Pokaż mapę”, a Facebook i Messenger otwierają się dopiero po kliknięciu odnośnika. Wtedy Google i Meta mogą zapisywać własne pliki cookies i przetwarzać Twoje dane zgodnie ze swoimi politykami prywatności. Pliki cookies możesz w każdej chwili usunąć lub zablokować w ustawieniach przeglądarki.</p></section>
+    <section><h3 class="font-semibold text-rye">5. Odbiorcy danych</h3>
+      <p>Odbiorcami danych mogą być firma hostingowa obsługująca stronę oraz dostawcy usług zewnętrznych: sieć CDN dostarczająca style strony (Tailwind CSS), Google Ireland Limited (mapa po kliknięciu) i Meta Platforms Ireland Limited (Facebook i Messenger). Nie sprzedajemy danych osobowych.</p></section>
+    <section><h3 class="font-semibold text-rye">6. Przekazywanie danych poza EOG</h3>
+      <p>Google i Meta mogą przekazywać dane do państw spoza Europejskiego Obszaru Gospodarczego, w tym do Stanów Zjednoczonych, na podstawie mechanizmów przewidzianych w RODO, takich jak decyzja Komisji Europejskiej o odpowiednim stopniu ochrony lub standardowe klauzule umowne.</p></section>
+    <section><h3 class="font-semibold text-rye">7. Okres przechowywania</h3>
+      <p>Dane techniczne w logach serwera są przechowywane przez okres ustalony przez firmę hostingową, zwykle nie dłużej niż kilka miesięcy. Wiadomości przechowujemy tak długo, jak jest to potrzebne do udzielenia odpowiedzi lub realizacji zamówienia, a następnie do czasu przedawnienia ewentualnych roszczeń.</p></section>
+    <section><h3 class="font-semibold text-rye">8. Twoje prawa</h3>
+      <p>Masz prawo dostępu do swoich danych, ich sprostowania, usunięcia, ograniczenia przetwarzania, przenoszenia oraz wniesienia sprzeciwu wobec przetwarzania opartego na prawnie uzasadnionym interesie. Z żądaniem skontaktuj się w sposób opisany w punkcie 1. Masz także prawo wnieść skargę do Prezesa Urzędu Ochrony Danych Osobowych (ul. Stawki 2, 00-193 Warszawa).</p></section>
+    <section><h3 class="font-semibold text-rye">9. Zautomatyzowane decyzje</h3>
+      <p>Nie podejmujemy wobec Ciebie decyzji w sposób zautomatyzowany i nie profilujemy użytkowników.</p></section>
+    <section><h3 class="font-semibold text-rye">10. Zmiany polityki</h3>
+      <p>Możemy aktualizować tę politykę, gdy zmieni się sposób działania strony lub przepisy. Aktualna wersja jest zawsze dostępna w stopce strony.</p></section>
+  </div>
+</dialog>
+
+<dialog id="lb" class="p-0 bg-transparent max-w-[92vw] max-h-[92vh] backdrop:bg-black/80">
+  <button id="lbClose" class="absolute top-2 right-2 z-10 w-10 h-10 rounded-full bg-paper text-ink text-xl font-bold" aria-label="Zamknij zdjęcie">×</button>
+  <img id="lbImg" alt="Powiększone zdjęcie z piekarni Chlebak Pieczywo Rzemieślnicze" class="max-w-[92vw] max-h-[92vh] rounded-2xl object-contain" referrerpolicy="no-referrer">
+</dialog>
+
+<script>
+  document.getElementById('year').textContent = new Date().getFullYear();
+
+  // Zdjęcia z Google Maps (p = pionowe, l = poziome). Zalecane: pobrać i hostować lokalnie.
+  var B = 'https://lh3.googleusercontent.com/gps-cs-s/';
+  var PHOTOS = [
+    ['ANWiy9Sax9HX9r2cylUE0sJNlW2jlOLEiVRRN4jQn77xZ5LQ89Z1Wg54vR-BD8Ycoav5mg-lnKl2lDEF7UrK-xgsrEznUY2a-BmS63C-E1dm8d6PcFVkkU5m49-cdkU0-XAvnir8VpAdE5IZqFP9', 'p'],
+    ['ANWiy9Q6b0P1kk9Kl9VGpm9jAIEabSw4fWK7edkjcdpeFKAArqbNSWR7LpSF7Mx2fNhAGmaplGV0KzFL8ybbfXdJSzEL_hC4p0bQPH3ctuqFrDWLbx1iQs1wqM_HnKuXMx7ISOOXVKOBQ8566luc', 'l'],
+    ['ANWiy9QwI37cBtYvvPqlwIRl1d-En3rNWWPT08IXlwTmMnx_TFt2Jq-t-qQ8jlGdMXGMEekf_Cn_bQbXSh8jEH26XvwW0r8_cLKGd1uQ1PsUkcQ5wqrT3R7MOnTC8wDzKDj8ZbJgPh-qfIVQ1fij', 'p'],
+    ['ANWiy9Qb4vmbg53xXCEq5LF2SV2AhycuEP6RqVXjEXUkinRp3_J52MCTxM53zsVfpIARTV29HE6-M0llvEz5XXmllwTR0HugCVj3EHem404vHSUYA9IcG2wzK6BgBvj9JhpEPw8-qYBF0pIHs0OU', 'p'],
+    ['ANWiy9S7bGngNDrnq_YhPYZmyosu-VshzZ8mzNvvzKC7EMnVLk2fXyfpnPBufIymNMnZOVjgHYmu7Dpb1IxYksX3H5nSC7NqWKmfhxCcrzh9cOxyT8yvGqFAapJquEl2oO7GRxBMOhlgxUeDBRn8', 'p'],
+    ['ANWiy9QCr-ryXJhHejz9FWmwLslsAsLPt_TafV1H3VmlzJcDaSOlDIRDeQvUjJc_UhFkGG4rwJ7ejSqh_JQziZhhbOp6wLvhMd21lJ7a3SpE6CXw_-gEW9CmNswoHNsu1-tpQ_vXL7UEW04eRQ8', 'l'],
+    ['ANWiy9Tp4HvTQQYBERpisf5oX-R2MbLQIDysauKTFnUaEyzcGIB11hc6QqjqmWTlUtOojorPHX5XYGTetvLpvgxh7gFjy3KSy8JU6hL9920_bsTt7NzbM9zukog9KwU3L0jt3e-8e6aNooXsAh3a', 'p'],
+    ['ANWiy9QAUso92OABBbbm4vZX4GT6h6cb3m3Wjfd_411ET_Z4ZJi35jxA0EgnIpg56TOUlTfzxIi2dTQzO6bVXLC7cyEKzIvpc77v9RJBmy4VqHgvr5LMiFV1v5c5sSrJr3PlW9ybElugKkyScKey', 'p'],
+    ['ANWiy9SDg-Y8cCXQbdDUkB0rXuG0w5UNFlkGGIBJSqts3sr9wd9DxMQwKthRHteCWyHSiWrrld3nyg4iOmR8ZlWhNrVY--2nig1orGFoVA45V23Ed6cCwFvibYzW4yMvDcsTIcXhKE-xhOOVqJQ9', 'p'],
+    ['ANWiy9RICZOUPdI0CbNfAVwzrAjCwaDQ9auZT-OvtzunYxVpcuHaPZGRCLHTcSJPHCpqogJcFYI0vLDmZMET98HuP-Td9eQgWCQq-0Rwb-tOMMhjUOqJqUt0vUgffn7HK-WL-ktUgCRWvOMfROI', 'p'],
+    ['ANWiy9SlctNKCsrMhaAg_QpEtTlhWUxSPzJjVippZPnyTYokbr2XJEjFxGlQlBAHbfOY2dMi71PGQDl7hq5kqA_XsOHRpQ0vdtbLO8xuxz0DV9qE0yhWq_OWH-maZhTHfmOu-MNxEooy-_kiSXs', 'p'],
+    ['ANWiy9RXXE3hLFozaotc4nEKN6yrSxzlGdaFOSoHFLMYMa8HIJlufs4pPMgXB_-OZ8nt4bP_sLJ4BlrP5cubrAOJIBqimJrEHKt-4kiBWmBtSK4kjD-u_j_7q8zI_CQarEJzOWsTvfMTbwRSYNg', 'p'],
+    ['ANWiy9QxhHBDvOpTua5FwbQzM0mXi0t69v_55U8y0XE7Ex5GfO50I9cboMwuz056WND0IUIqIF9hKueknZ9gTtVwvZQTWuOBFzS75TB6_5BXGUXtgRqh-t2UqS6zVtk1RnCKsHspzP88ePGSBVgc', 'p']
+  ];
+  var src = function (i, w) { return B + PHOTOS[i][0] + '=w' + w; };
+
+  var hero = document.getElementById('heroImg');
+  hero.src = src(0, 900);
+  hero.onerror = function () { hero.parentNode.style.background = '#2B4A35'; hero.remove(); };
+
+  var gal = document.getElementById('gallery'), cur = 0;
+  PHOTOS.forEach(function (p, i) {
+    var b = document.createElement('button');
+    b.type = 'button';
+    b.className = 'tile rv relative mb-4 block w-full overflow-hidden rounded-2xl shadow-md hover:shadow-2xl bg-wheat break-inside-avoid ' + (p[1] === 'l' ? 'aspect-[4/3]' : 'aspect-[3/4]');
+    b.style.setProperty('--d', ((i % 4) * 0.08) + 's');
+    b.setAttribute('aria-label', 'Powiększ zdjęcie ' + (i + 1) + ' z piekarni Chlebak Pieczywo Rzemieślnicze');
+    var im = document.createElement('img');
+    im.src = src(i, 700); im.loading = 'lazy'; im.alt = 'Zdjęcie ' + (i + 1) + ' z piekarni Chlebak Pieczywo Rzemieślnicze w Rudzie Śląskiej';
+    im.className = 'w-full h-full object-cover'; im.referrerPolicy = 'no-referrer';
+    im.onerror = function () { b.remove(); };
+    b.appendChild(im);
+    b.addEventListener('click', function () { cur = i; openLb(); });
+    gal.appendChild(b);
+  });
+
+  var lb = document.getElementById('lb'), lbImg = document.getElementById('lbImg');
+  function openLb() { lbImg.src = src(cur, 1600); if (!lb.open) lb.showModal(); }
+  document.getElementById('lbClose').addEventListener('click', function () { lb.close(); });
+  lb.addEventListener('click', function (e) { if (e.target === lb) lb.close(); });
+  document.addEventListener('keydown', function (e) {
+    if (!lb.open) return;
+    if (e.key === 'ArrowRight') { cur = (cur + 1) % PHOTOS.length; openLb(); }
+    if (e.key === 'ArrowLeft') { cur = (cur - 1 + PHOTOS.length) % PHOTOS.length; openLb(); }
+  });
+
+  // Pojawianie się elementów i licznik
+  var reduce = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+  function count(el) {
+    var end = parseFloat(el.dataset.count), dec = parseInt(el.dataset.dec || '0', 10), t0 = null;
+    if (reduce) return;
+    function step(t) {
+      if (!t0) t0 = t;
+      var k = Math.min((t - t0) / 1400, 1), v = end * (1 - Math.pow(1 - k, 3));
+      el.textContent = v.toFixed(dec).replace('.', ',');
+      if (k < 1) requestAnimationFrame(step);
+    }
+    requestAnimationFrame(step);
+  }
+  var io = new IntersectionObserver(function (entries) {
+    entries.forEach(function (en) {
+      if (!en.isIntersecting) return;
+      en.target.classList.add('in');
+      en.target.querySelectorAll('[data-count]').forEach(count);
+      io.unobserve(en.target);
+    });
+  }, { threshold: 0.15 });
+  document.querySelectorAll('.rv').forEach(function (el) { io.observe(el); });
+
+  // Delikatny paralaks zdjęcia w hero
+  if (!reduce) {
+    var wrap = hero.closest('.float');
+    window.addEventListener('scroll', function () {
+      if (window.scrollY < 900 && hero.parentNode) hero.style.transform = 'translateY(' + (window.scrollY * 0.05) + 'px) scale(1.08)';
+    }, { passive: true });
+  }
+
+  // Mapa ładowana dopiero po kliknięciu
+  document.getElementById('mapBtn').addEventListener('click', function () {
+    var f = document.createElement('iframe');
+    f.title = 'Mapa dojazdu do piekarni Chlebak Pieczywo Rzemieślnicze, Astrów 12, Ruda Śląska';
+    f.referrerPolicy = 'no-referrer-when-downgrade';
+    f.style.cssText = 'position:absolute;inset:0;width:100%;height:100%;border:0';
+    f.src = 'https://maps.google.com/maps?q=50.3003298,18.8521927%20(Chlebak%20Pieczywo%20Rzemie%C5%9Blnicze)&z=17&output=embed';
+    document.getElementById('mapBox').appendChild(f);
+    document.getElementById('mapPh').remove();
+  });
+
+  // Taśma: zawsze wypełnia ekran i zapętla się bez przerwy
+  (function () {
+    var m = document.getElementById('marq'), g = m.querySelector('.mg');
+    function fit() {
+      var w = g.getBoundingClientRect().width;
+      if (!w) return;
+      var need = Math.ceil(window.innerWidth / w) + 1;
+      while (m.children.length < need) m.appendChild(g.cloneNode(true));
+      m.style.setProperty('--mw', w + 'px');
+      m.style.setProperty('--md', (w / 70) + 's');
+    }
+    fit();
+    if (document.fonts && document.fonts.ready) document.fonts.ready.then(fit);
+    window.addEventListener('resize', fit);
+  })();
+
+  // Cookies i polityka prywatności
+  var cookieBar = document.getElementById('cookieBar'), policy = document.getElementById('policy');
+  var accepted = false;
+  try { accepted = localStorage.getItem('chlebak_cookies') === '1'; } catch (e) {}
+  if (!accepted) setTimeout(function () { cookieBar.classList.remove('hidden'); }, 900);
+  document.getElementById('cookieOk').addEventListener('click', function () {
+    try { localStorage.setItem('chlebak_cookies', '1'); } catch (e) {}
+    cookieBar.classList.add('hidden');
+  });
+  document.querySelectorAll('.js-policy').forEach(function (b) {
+    b.addEventListener('click', function () { policy.showModal(); });
+  });
+  document.getElementById('policyClose').addEventListener('click', function () { policy.close(); });
+  policy.addEventListener('click', function (e) { if (e.target === policy) policy.close(); });
+
+  // Status otwarcia (Europe/Warsaw)
+  (function () {
+    var parts = new Intl.DateTimeFormat('en-GB', { timeZone: 'Europe/Warsaw', weekday: 'short', hour: '2-digit', minute: '2-digit', hour12: false }).formatToParts(new Date());
+    var get = function (t) { return parts.find(function (p) { return p.type === t; }).value; };
+    var mins = parseInt(get('hour'), 10) * 60 + parseInt(get('minute'), 10);
+    var open = ['Mon', 'Tue', 'Wed', 'Thu', 'Fri'].indexOf(get('weekday')) > -1 && mins >= 780 && mins < 1140;
+    document.getElementById('dot').className = 'w-2.5 h-2.5 rounded-full ' + (open ? 'bg-green-500' : 'bg-red-500');
+    document.getElementById('statusText').textContent = open ? 'Otwarte teraz, od 13:00 do 19:00' : 'Zamknięte teraz, zapraszamy pn–pt od 13:00 do 19:00';
+  })();
+</script>
+</body>
+</html>
