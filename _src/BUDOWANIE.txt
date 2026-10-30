@@ -1,0 +1,7 @@
+Style strony (style.css) są skompilowane z Tailwind CSS 3.4.17.
+Jeśli dopiszesz w index.html nową klasę Tailwinda, której jeszcze nie ma na stronie, przebuduj plik:
+
+  cd _src
+  npx tailwindcss@3.4.17 -c tailwind.config.js -i input.css -o ../style.css --minify
+
+Zmiany samych tekstów, linków i zdjęć nie wymagają przebudowy.
